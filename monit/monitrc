@@ -1,0 +1,14 @@
+###############################################################################
+## Monit control file
+###############################################################################
+
+## Start Monit in the background (run as a daemon):
+
+  set daemon 30             # check services at 30 seconds intervals
+  set logfile /var/log/monit.log
+  set idfile /var/lib/monit/id
+  set statefile /var/lib/monit/state
+  set eventqueue
+      basedir /var/lib/monit/events # set the base directory where events will be stored
+      slots 100                     # optionally limit the queue size
+  include /etc/monit/conf.d/*
