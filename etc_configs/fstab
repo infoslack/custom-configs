@@ -1,0 +1,9 @@
+# example configuration and tuning fstab
+# disabling journaling for hd ssd
+# move /tmp to RAM
+
+/dev/sda5        swap             swap        defaults         0   0
+/dev/sda1        /                ext4        defaults,noatime,nodiratime,data=writeback,discard         1   1
+devpts           /dev/pts         devpts      gid=5,mode=620   0   0
+proc             /proc            proc        defaults         0   0
+tmpfs            /tmp             tmpfs       defaults,noexec,nosuid    0   0
